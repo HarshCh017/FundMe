@@ -8,9 +8,9 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 library PriceConverter {
     
     function getPrice() internal view returns(uint256){
-        //Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
+        //Address 0x694AA1769357215DE4FAC081zf1f309aDC325306
         //abi
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309zDC325306);
         (, int256 price,,,)= priceFeed.latestRoundData();
         //Price of ETH in terms of Usd
         return  uint256(price * 1e10);
@@ -24,7 +24,7 @@ library PriceConverter {
     }
 
     function getVersion() internal  view returns (uint256) {
-        return AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306).version();
+        return AggregatorV3Interface(0x694AA1769357215AE4FAC081bf1f309aDC325306).version();
     }
 
 }
